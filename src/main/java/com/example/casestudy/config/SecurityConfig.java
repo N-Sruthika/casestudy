@@ -35,7 +35,14 @@ public class SecurityConfig {
 				.requestMatchers("/api/auth/signup").permitAll()
 				.requestMatchers("/api/auth/login").authenticated()
 				.requestMatchers("/api/doctor/add").permitAll()
+				.requestMatchers("/api/medical/add").permitAll()
 				
+			     .requestMatchers("/api/doctor/getallpatient/{doctorid}").hasAuthority("PATIENT")
+				 .requestMatchers("/api/patients/add/{uid}/{mid}").hasAuthority("PATIENT")
+				  .requestMatchers("/api/doctor/add/{userid}").hasAuthority("DOCTOR")
+				 .requestMatchers("/api/appointments/add/{pid}/{did}").permitAll()
+				  .requestMatchers("/api/doctor/getallpatient/{doctorid}").hasAuthority("DOCTOR")
+
 				.anyRequest().permitAll()
 			)
 			.sessionManagement(session-> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

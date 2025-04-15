@@ -13,6 +13,12 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "doctors")
 public class Doctor {
+	public Doctor(String name, Speciality speciality, User user) {
+		super();
+		this.name = name;
+		this.speciality = speciality;
+		this.user = user;
+	}
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id; 
@@ -24,6 +30,9 @@ public class Doctor {
 	@OneToOne
     private User user;
 	
+	public Doctor(int i, String string, User user2) {
+		// TODO Auto-generated constructor stub
+	}
 	public int getId() {
 		return id;
 	}
@@ -46,6 +55,13 @@ public class Doctor {
 		return user;
 	}
 	public void setUser(User user) {
+		this.user = user;
+	}
+	public Doctor(int id, String name, Speciality speciality, User user) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.speciality = speciality;
 		this.user = user;
 	}		
 

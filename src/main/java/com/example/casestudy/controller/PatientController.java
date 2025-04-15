@@ -16,7 +16,7 @@ import com.example.casestudy.service.MedicalHistoryService;
 import com.example.casestudy.service.PatientService;
 
 @RestController
-@RequestMapping("/api/patient")
+@RequestMapping("/api/patients")
 public class PatientController {
 
     @Autowired

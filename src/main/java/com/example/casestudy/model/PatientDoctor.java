@@ -22,7 +22,8 @@ public class PatientDoctor {
 
     private String reason;
 
-    public int getId() {
+    
+	public int getId() {
         return id;
     }
 
@@ -61,4 +62,21 @@ public class PatientDoctor {
     public void setReason(String reason) {
         this.reason = reason;
     }
+
+	public PatientDoctor(int id, Patient patient, Doctor doctor, LocalDate appointmentDate, String reason) {
+		super();
+		this.id = id;
+		this.patient = patient;
+		this.doctor = doctor;
+		this.appointmentDate = appointmentDate;
+		this.reason = reason;
+	}
+
+	public PatientDoctor(Patient patient, Doctor doctor, LocalDate appointmentDate, String reason) {
+		super();
+		this.patient = patient;
+		this.doctor = doctor;
+		this.appointmentDate = appointmentDate;
+		this.reason = reason;
+	}
 }
